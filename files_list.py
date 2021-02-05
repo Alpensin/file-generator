@@ -1,12 +1,12 @@
-from os import scandir, path, chdir
+from os import chdir, path, scandir
 
-result_list = 'logs_list.txt'
+result_list = "logs_list.txt"
 logs_dir = r"."
-searched_extensions = ('.zip', '.nmf')
+searched_extensions = (".zip", ".nmf")
 chdir(logs_dir)
 
-with open(result_list, 'w') as f:
+with open(result_list, "w") as f:
     for file in scandir():
         ext = path.splitext(file.name)[1]
         if ext in searched_extensions:
-            f.write(file.name+'\n')
+            f.write(file.name + "\n")
